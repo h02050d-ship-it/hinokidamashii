@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無垢ひのき工場直販 ひのき魂｜国産桧フローリング・羽目板を工場から直接、最安値で</title>
-<meta name="description" content="創業1968年、桧一筋55年以上の製材工場が運営する直販ストア。国産無垢桧のフローリング・羽目板を、当店のモール店より安い公式最安価格で。レビュー600件以上・評価4.97。無料サンプルあり。">
+<title>無垢ひのき工場直販 ひのき魂｜国産桧フローリング・羽目板を工場から直接、公式最安で</title>
+<meta name="description" content="創業1968年、桧一筋半世紀以上の製材工場が運営する直販ストア。国産無垢桧のフローリング・羽目板を、当店のモール店より安い公式最安価格で。レビュー600件以上・評価4.97。無料サンプルあり。">
 <link rel="canonical" href="https://h02050d-ship-it.github.io/hinokidamashii/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="無垢ひのき工場直販 ひのき魂">
@@ -32,6 +32,7 @@
       <span class="brand-sub">無垢ひのき工場直販</span>
       <span class="brand-main">ひのき魂</span>
     </a>
+    <a class="cart-link cart-link-m" href="cart.html" aria-label="カート">カート<span class="cart-badge is-empty">0</span></a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
       <a href="products.html">商品一覧・価格</a>
@@ -53,7 +54,7 @@
         <span class="stars">★★★★★</span><strong>4.97</strong>
         <span>／ レビュー600件以上</span>
       </div>
-      <h1>桧一筋、半世紀以上。<br>作った工場が、そのまま売ります。</h1>
+      <h1><span class="nowrap">桧一筋、半世紀以上。</span><br><span class="nowrap">作った工場が、</span><span class="nowrap">そのまま売ります。</span></h1>
       <p class="hero-lead">
         原板の目利きから天然乾燥、カンナ仕上げ、検品まで。<br>
         静岡・磐田の自社工場で一枚ずつ仕上げた国産無垢桧を、<br>
@@ -98,8 +99,8 @@
       </div>
       <div class="price-compare">
         <div class="pc-row">
-          <span class="pc-label">一般的な小売店（問屋経由）</span>
-          <span class="pc-val">高い</span>
+          <span class="pc-label">メーカー希望小売価格</span>
+          <span class="pc-val" id="pc-msrp">—</span>
         </div>
         <div class="pc-row">
           <span class="pc-label">当店 ヤフー店・楽天店</span>
@@ -150,7 +151,7 @@
 <!-- ===== 選ばれる理由 ===== -->
 <section class="section bg-cream">
   <div class="container ta-center">
-    <div class="section-label">Why Hayazai</div>
+    <div class="section-label">Why Direct</div>
     <h2 class="section-title">工場から直接買う、6つのメリット</h2>
     <div class="reason-grid" style="margin-top:32px;text-align:left;">
       <div class="reason">
@@ -224,7 +225,7 @@
         <div class="grade-body">
           <div class="grade-name">無節<span class="grade-kana">むぶし</span></div>
           <div class="grade-sub">最高グレード</div>
-          <p>節が一切なく、均一で美しい木肌。リビング・寝室・茶室など、最もこだわりたい空間に。旅館や高級住宅にも使われます。</p>
+          <p>節が一切なく、均一で美しい木肌。リビング・寝室・茶室など、最もこだわりたい空間に。旅館や料亭のような、上質な空間づくりに。</p>
         </div>
       </div>
     </div>
@@ -245,7 +246,7 @@
       <div class="rating-big">4.97</div>
       <div class="rating-meta">
         <span class="stars">★★★★★</span>
-        累計600件以上のご感想／★5が97%
+        累計600件以上のご感想をいただいています
       </div>
     </div>
     <div class="voice-grid">
@@ -450,6 +451,7 @@
 </footer>
 
 <script src="https://hayazai.com/data/products.js"></script>
+<script src="https://hayazai.com/shop/base_prices.js"></script>
 <script src="js/shop.js"></script>
 <script>
   // 創業年からの年数を自動更新（1968年創業）

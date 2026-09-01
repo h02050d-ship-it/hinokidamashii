@@ -20,8 +20,27 @@ const SHOP = {
 
 // ---------- 価格 ----------
 
+// メーカー希望小売価格（税抜/1枚。A級の1820/3000/4000のみ。HPの価格表と同じ表）
+const MSRP_PER_SHEET = {
+  1820: { '節有': 1050, '小節': 1325, '特上小': 1500, '無節': 2200 },
+  3000: { '節有': 1760, '小節': 2320, '特上小': 3300, '無節': 4000 },
+  4000: { '節有': 2350, '小節': 3000, '特上小': 5000, '無節': 6000 },
+};
+function msrpPrice(p) {
+  if (p.grade !== 'A') return null;
+  const row = MSRP_PER_SHEET[p.length];
+  const per = row ? row[p.quality] : null;
+  return per ? Math.round(per * p.qty * 1.10) : null;
+}
+
+// 基準価格 = ヤフー店(products.js) と 楽天店(base_prices.js) のうち安い方
+function basePrice(p) {
+  const o = (window.SHOP_BASE_OVERRIDES || {})[p.id];
+  return (o && o < p.price) ? o : p.price;
+}
+
 function shopPrice(p) {
-  return Math.floor(p.price * 0.95 / 10) * 10;
+  return Math.floor(basePrice(p) * 0.95 / 10) * 10;
 }
 
 function yen(n) {
@@ -84,7 +103,7 @@ function removeFromCart(id) {
 function cartLines() {
   return getCart().map(i => {
     const p = findProduct(i.id);
-    return { ...i, product: p, unit: shopPrice(p), mall: p.price, subtotal: shopPrice(p) * i.qty };
+    return { ...i, product: p, unit: shopPrice(p), mall: basePrice(p), subtotal: shopPrice(p) * i.qty };
   });
 }
 
@@ -106,6 +125,7 @@ function updateStickyCart() {
   if (!bar) return;
   const n = cartCount();
   bar.classList.toggle('show', n > 0);
+  document.body.classList.toggle('has-sticky', n > 0);
   const info = document.getElementById('sticky-cart-info');
   if (info) info.innerHTML = `カート ${n}点<strong>${yen(cartTotal())}</strong>`;
 }
@@ -133,12 +153,14 @@ function renderPriceCompare() {
   if (!mallEl) return;
   const p = findProduct(SHOP.SAMPLE_ID) || visibleProducts()[0];
   if (!p) return;
-  mallEl.textContent = yen(p.price);
+  mallEl.textContent = yen(basePrice(p));
   const shopEl = document.getElementById('pc-shop');
   if (shopEl) shopEl.textContent = yen(shopPrice(p));
+  const msrpEl = document.getElementById('pc-msrp');
+  if (msrpEl) { const m = msrpPrice(p); msrpEl.textContent = m ? yen(m) : '—'; }
   const note = document.getElementById('pc-note');
   if (note) {
-    const diff = p.price - shopPrice(p);
+    const diff = basePrice(p) - shopPrice(p);
     note.innerHTML = `※ ${shortName(p)} の場合。この商品なら <strong style="color:var(--price)">${yen(diff)}お得</strong>です。価格はモール側の改定に合わせて自動更新しています。`;
   }
 }
@@ -147,7 +169,7 @@ function renderPriceCompare() {
 
 function productCard(p) {
   const price = shopPrice(p);
-  const save = p.price - price;
+  const save = basePrice(p) - price;
   const perSheet = Math.round(price / p.qty);
   const gradeCls = p.grade === 'B' ? 'badge-b' : 'badge-a';
   const pop = p.quality === '小節' ? '<span class="badge badge-pop">人気</span>' : '';
@@ -164,7 +186,7 @@ function productCard(p) {
           ${pop}
         </div>
         <div class="p-size">${p.thick}×${p.width}×${p.length}mm <span class="p-qty">${p.qty}枚入</span></div>
-        <div class="p-price-row">モール価格 <span class="p-price-ref">${yen(p.price)}</span> → 当店</div>
+        <div class="p-price-row">モール価格 <span class="p-price-ref">${yen(basePrice(p))}</span> → 当店</div>
         <div class="p-price">${yen(price)}<span class="p-tax">税込</span></div>
         <div class="p-per">1枚あたり 約${yen(perSheet)}</div>
         <div class="p-actions">
@@ -238,28 +260,25 @@ function renderCartPage() {
 
   root.innerHTML = `
     <div class="cart-layout">
-      <div class="cart-table-wrap">
-        <table class="cart-table">
-          <thead><tr><th></th><th>商品</th><th>単価</th><th>数量</th><th>小計</th><th></th></tr></thead>
-          <tbody>
-            ${lines.map(l => `
-              <tr>
-                <td><img class="cart-img" src="${l.product.img}" alt=""></td>
-                <td class="cart-name">${shortName(l.product)}</td>
-                <td><span class="cart-mall">${yen(l.mall)}</span><br>${yen(l.unit)}</td>
-                <td>
-                  <div class="qty-input">
-                    <button type="button" class="qty-btn" onclick="setCartQty('${l.id}', ${l.qty - 1}); renderCartPage();">−</button>
-                    <input type="number" class="qty-num" value="${l.qty}" min="1" aria-label="数量"
-                      onchange="setCartQty('${l.id}', parseInt(this.value)); renderCartPage();">
-                    <button type="button" class="qty-btn" onclick="setCartQty('${l.id}', ${l.qty + 1}); renderCartPage();">＋</button>
-                  </div>
-                </td>
-                <td class="cart-sub">${yen(l.subtotal)}</td>
-                <td><button type="button" class="cart-del" title="削除" onclick="removeFromCart('${l.id}'); renderCartPage();">✕</button></td>
-              </tr>`).join('')}
-          </tbody>
-        </table>
+      <div class="cart-list">
+        ${lines.map(l => `
+          <div class="cart-line">
+            <img class="cart-img" src="${l.product.img}" alt="">
+            <div class="cart-line-main">
+              <div class="cart-name">${shortName(l.product)}</div>
+              <div class="cart-unit"><s>モール ${yen(l.mall)}</s>当店 ${yen(l.unit)}／束</div>
+            </div>
+            <div class="cart-line-right">
+              <div class="qty-input">
+                <button type="button" class="qty-btn" onclick="setCartQty('${l.id}', ${l.qty - 1}); renderCartPage();">−</button>
+                <input type="number" class="qty-num" value="${l.qty}" min="1" aria-label="数量"
+                  onchange="setCartQty('${l.id}', parseInt(this.value)); renderCartPage();">
+                <button type="button" class="qty-btn" onclick="setCartQty('${l.id}', ${l.qty + 1}); renderCartPage();">＋</button>
+              </div>
+              <div class="cart-sub">${yen(l.subtotal)}</div>
+              <button type="button" class="cart-del" title="削除" aria-label="削除" onclick="removeFromCart('${l.id}'); renderCartPage();">✕</button>
+            </div>
+          </div>`).join('')}
       </div>
       <div class="cart-summary">
         <div class="cart-total-row">商品合計（税込）<strong>${yen(cartTotal())}</strong></div>
