@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ご注文ありがとうございました｜ひのき魂</title>
+<title>ありがとうございました｜ひのき魂</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
@@ -20,29 +21,40 @@
     </a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
-      <a href="products.html">商品一覧</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル</a>
       <a href="guide.html">ご利用ガイド</a>
-      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
     </nav>
   </div>
 </header>
 
 <div class="complete-box">
-  <h1>ご注文ありがとうございました</h1>
+  <div class="complete-icon">✓</div>
+  <h1 id="complete-title">ご注文ありがとうございました</h1>
   <div class="order-no" id="order-no">受付番号：—</div>
-  <p>ご入力のメールアドレスへ受付確認メールをお送りしました。<br>
-  在庫を確認のうえ、<strong>送料込みの合計金額とお振込先</strong>を<br>1営業日以内に担当よりメールでご案内いたします。</p>
-  <p style="margin-top:14px;font-size:0.8rem;color:#8a7a63;">確認メールが届かない場合は、迷惑メールフォルダをご確認のうえ、<br>info@hayazai.com までお問い合わせください。</p>
-  <a class="btn btn-primary" href="index.html">トップへ戻る</a>
+  <p id="complete-body">
+    ご入力のメールアドレスへ受付確認メールをお送りしました。<br>
+    在庫を確認のうえ、<strong>送料込みの合計金額とお振込先</strong>を<br>
+    1営業日以内に担当よりメールでご案内いたします。
+  </p>
+  <p style="margin-top:16px;font-size:0.8rem;color:var(--text-light);">
+    確認メールが届かない場合は、迷惑メールフォルダをご確認のうえ<br>
+    info@hayazai.com までお問い合わせください。
+  </p>
+  <a class="btn btn-primary" href="index.html" style="margin-top:26px;">トップへ戻る</a>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
     <div class="footer-links">
-      <a href="products.html">商品一覧</a>
-      <a href="guide.html">ご利用ガイド</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
       <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
     </div>
     <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
   </div>
@@ -51,8 +63,18 @@
 <script src="https://hayazai.com/data/products.js"></script>
 <script src="js/shop.js"></script>
 <script>
-  const no = new URLSearchParams(location.search).get('order');
-  if (no) document.getElementById('order-no').textContent = '受付番号：' + no;
+  (function () {
+    const q = new URLSearchParams(location.search);
+    const no = q.get('order');
+    if (no) document.getElementById('order-no').textContent = '受付番号：' + no;
+    if (q.get('sample')) {
+      document.getElementById('complete-title').textContent = 'サンプルのお申し込みを承りました';
+      document.getElementById('complete-body').innerHTML =
+        'ご入力のメールアドレスへ受付確認メールをお送りしました。<br>' +
+        '<strong>通常2〜5営業日以内に発送</strong>いたします。<br>' +
+        '実物の香り・手触り・色味を、どうぞお確かめください。';
+    }
+  })();
 </script>
 </body>
 </html>

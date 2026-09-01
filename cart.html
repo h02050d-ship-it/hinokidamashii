@@ -7,7 +7,8 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
@@ -20,26 +21,35 @@
     </a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
-      <a href="products.html">商品一覧</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル</a>
       <a href="guide.html">ご利用ガイド</a>
-      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
     </nav>
   </div>
 </header>
 
-<h1 class="page-title">ショッピングカート</h1>
+<div class="page-head">
+  <div class="container">
+    <h1>ショッピングカート</h1>
+    <p>ご注文を確定しても、この時点ではお支払いは発生しません。</p>
+  </div>
+</div>
 
-<div class="container" id="cart-root" style="padding-bottom:40px;">
+<div class="container" id="cart-root" style="padding:40px 20px 70px;">
   <p class="load-error">読み込んでいます…</p>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
     <div class="footer-links">
-      <a href="products.html">商品一覧</a>
-      <a href="guide.html">ご利用ガイド</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
       <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
     </div>
     <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
   </div>

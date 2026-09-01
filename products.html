@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品一覧｜無垢ひのき工場直販 ひのき魂</title>
-<meta name="description" content="国産無垢桧フローリング・羽目板の商品一覧。大手モール掲載価格より全品5%OFF。">
+<title>商品一覧・価格｜無垢ひのき工場直販 ひのき魂</title>
+<meta name="description" content="国産無垢桧フローリング・羽目板の商品一覧。工場直販だから、当店ヤフー店・楽天店より安い公式最安価格。全品税込表示。">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://item-shopping.c.yimg.jp">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
@@ -21,36 +22,64 @@
     </a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
-      <a href="products.html">商品一覧</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="index.html#grade">グレードの選び方</a>
+      <a href="index.html#voice">お客様の声</a>
+      <a href="sample.html">無料サンプル</a>
       <a href="guide.html">ご利用ガイド</a>
-      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
     </nav>
   </div>
 </header>
 
-<h1 class="page-title">商品一覧</h1>
-<p class="page-lead">すべて国産無垢ひのき・自社工場で製材加工。価格は税込です。</p>
-<div class="container">
-  <div class="off-banner">
-    表示価格は、当店がヤフーショッピング店に掲載している価格の <strong>5%引き（10円未満切捨て）</strong>です。送料は別途（ご注文確認メールでご案内します）。
+<div class="page-head">
+  <div class="container">
+    <h1>商品一覧・価格</h1>
+    <p>国産無垢ひのき100%・静岡県磐田市の自社工場で製材加工。価格はすべて税込です。</p>
+    <div class="best-banner">
+      <strong>ここが当店の最安価格です。</strong>
+      同じ商品を、当店のヤフー店・楽天店より安くご提供しています（モール手数料を還元／掲載価格の5%引き・10円未満切捨て）。
+      各商品の「お得」表示が、モールで買う場合との差額です。送料は別途、ご注文確認メールでご案内します。
+    </div>
+    <div class="p-nav">
+      <a href="#flooring15">フローリング 15mm</a>
+      <a href="#flooring12">フローリング 12mm</a>
+      <a href="#panel">羽目板 12mm</a>
+      <a href="index.html#grade">グレードの選び方</a>
+      <a href="sample.html">無料サンプル</a>
+    </div>
   </div>
 </div>
 
-<div class="container" id="product-list">
+<div class="container" id="product-list" style="padding-bottom:70px;">
   <p class="load-error">商品を読み込んでいます…</p>
+</div>
+
+<div class="cta-band">
+  <h2>どのグレードか迷ったら</h2>
+  <p>節有・小節・特上小・無節。写真では伝わらない手触りと香りを、実物で見比べられます。<br>サンプルは無料、送料も無料です。</p>
+  <a class="btn btn-primary" href="sample.html">無料サンプルを請求する</a>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
     <div class="footer-links">
-      <a href="products.html">商品一覧</a>
-      <a href="guide.html">ご利用ガイド</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
       <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
     </div>
     <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
   </div>
 </footer>
+
+<div class="sticky-cart" id="sticky-cart">
+  <div class="sticky-cart-info" id="sticky-cart-info"></div>
+  <a class="btn btn-primary" href="cart.html">カートを見る</a>
+</div>
 
 <script src="https://hayazai.com/data/products.js"></script>
 <script src="js/shop.js"></script>

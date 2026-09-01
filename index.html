@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無垢ひのき工場直販 ひのき魂｜国産桧フローリング・羽目板の直販ストア</title>
-<meta name="description" content="国産無垢ひのきのフローリング・羽目板を工場直販。大手モール掲載価格より5%OFF。製材工場から直接お届けします。">
+<title>無垢ひのき工場直販 ひのき魂｜国産桧フローリング・羽目板を工場から直接、最安値で</title>
+<meta name="description" content="創業1968年、桧一筋55年以上の製材工場が運営する直販ストア。国産無垢桧のフローリング・羽目板を、当店のモール店より安い公式最安価格で。レビュー600件以上・評価4.97。無料サンプルあり。">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://item-shopping.c.yimg.jp">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://hayazai.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
@@ -21,91 +22,416 @@
     </a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
-      <a href="products.html">商品一覧</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="#grade">グレードの選び方</a>
+      <a href="#voice">お客様の声</a>
+      <a href="sample.html">無料サンプル</a>
       <a href="guide.html">ご利用ガイド</a>
-      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
     </nav>
   </div>
 </header>
 
-<div class="hero">
-  <h1>製材工場から、直接あなたへ。</h1>
-  <p>国産無垢ひのきのフローリング・羽目板を、余計な中間コストなしでお届けします。</p>
-  <div><span class="hero-off">大手モール掲載価格より 全品5%OFF</span></div>
-  <div><a class="btn btn-primary" href="products.html">商品一覧を見る</a></div>
-</div>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <img class="hero-img" src="https://hayazai.com/images/hero/hero_baby_real.webp" alt="桧の無垢フローリングの上でくつろぐ赤ちゃん" fetchpriority="high">
+  <div class="hero-inner">
+    <div class="hero-box">
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span><strong>4.97</strong>
+        <span>／ レビュー600件以上</span>
+      </div>
+      <h1>桧一筋、半世紀以上。<br>作った工場が、そのまま売ります。</h1>
+      <p class="hero-lead">
+        原板の目利きから天然乾燥、カンナ仕上げ、検品まで。<br>
+        静岡・磐田の自社工場で一枚ずつ仕上げた国産無垢桧を、<br>
+        問屋も小売店も通さず、直接お届けします。
+      </p>
+      <div class="hero-price-badge">
+        当店で買うなら、ここが一番安い。
+        <small>ヤフー店・楽天店の掲載価格より、必ずお安くご提供しています</small>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="products.html">商品一覧・価格を見る</a>
+        <a class="btn btn-outline" href="sample.html">まず無料サンプルを取り寄せる</a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num" id="stat-years">55年以上</div><div class="stat-label">創業からの実績</div></div>
+      <div class="stat"><div class="stat-num">4.97</div><div class="stat-label">600件以上のレビュー評価</div></div>
+      <div class="stat"><div class="stat-num">20,000束超</div><div class="stat-label">年間販売実績</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">国産無垢桧</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== なぜ一番安いのか ===== -->
+<section class="section why-cheap">
+  <div class="container">
+    <div class="why-cheap-grid">
+      <div>
+        <div class="section-label">Why So Reasonable</div>
+        <h2 class="section-title">なぜ、ここが一番安いのか。</h2>
+        <p class="section-desc">
+          当店はヤフーショッピングと楽天市場にも出店しています。ただ、モールでは売上の約1割が手数料として引かれ、その分は価格に乗せざるを得ません。<br><br>
+          このサイトは自社で運営しているので、その費用がかかりません。<strong>浮いた分をそのまま価格に反映</strong>しているため、まったく同じ商品・同じ品質が、当店のモール店より安く買えます。<br><br>
+          さらに製材から仕上げまで自社工場の一貫生産。問屋・小売店を挟まないぶん、そもそもの価格を抑えられます。
+        </p>
+      </div>
+      <div class="price-compare">
+        <div class="pc-row">
+          <span class="pc-label">一般的な小売店（問屋経由）</span>
+          <span class="pc-val">高い</span>
+        </div>
+        <div class="pc-row">
+          <span class="pc-label">当店 ヤフー店・楽天店</span>
+          <span class="pc-val" id="pc-mall">—</span>
+        </div>
+        <div class="pc-row is-best">
+          <span class="pc-label">このサイト<span class="pc-tag">公式最安</span></span>
+          <span class="pc-val" id="pc-shop">—</span>
+        </div>
+        <p class="pc-note" id="pc-note">
+          ※ 桧フローリング 15×108×1820mm 節有A級（20枚入）の場合。価格はモール側の改定に合わせて自動更新しています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 作っているのは私たち ===== -->
 <section class="section">
-  <div class="container">
-    <h2 class="section-title">ひのき魂が選ばれる理由</h2>
-    <p class="section-lead">ヤフーショッピング・楽天市場で販売中の商品を、直販ならではの価格で。</p>
-    <div class="features">
-      <div class="feature">
-        <span class="num">01</span>
-        <h3>モール掲載価格より5%OFF</h3>
-        <p>大手モールに出店中の当店が、モールの手数料分を還元。同じ商品・同じ品質を、掲載価格から5%引き（10円未満切捨て）でご購入いただけます。</p>
+  <div class="container ta-center">
+    <div class="section-label">Our Craftsmanship</div>
+    <h2 class="section-title">作っているのは、私たちです。</h2>
+    <p class="section-desc">
+      昭和43年の創業から、桧一筋。原板の仕入れ、天然乾燥、加工、超仕上げ、検品、出荷まで——すべて静岡県磐田市の自社工場で行っています。
+      床材の質感を決める最後のひと削りまで、自分たちの目と手で確かめる。半世紀以上、変わらないやり方です。
+    </p>
+    <div class="craft-grid">
+      <div class="craft-item">
+        <img src="https://hayazai.com/lp/img/p8_anaake.webp" alt="抜け節をドリルでくり抜く穴あけ工程" loading="lazy">
+        <div class="craft-cap"><strong>穴あけ</strong>抜け節を一つずつくり抜きます</div>
       </div>
-      <div class="feature">
-        <span class="num">02</span>
-        <h3>製材工場の直販</h3>
-        <p>静岡県の自社工場で製材・加工した国産桧を、工場から直接発送。フローリングは本実・エンドマッチ加工、超仕上げ済みです。</p>
+      <div class="craft-item">
+        <img src="https://hayazai.com/lp/img/p9_umeki.webp" alt="桧の駒を槌で打ち込む埋木の手仕事" loading="lazy">
+        <div class="craft-cap"><strong>埋木</strong>桧の駒を槌で打ち込み、木で埋める</div>
       </div>
-      <div class="feature">
-        <span class="num">03</span>
-        <h3>等級が選べる</h3>
-        <p>節の少ない「無節」から、お手頃な「節有」まで4等級をご用意。用途とご予算に合わせてお選びいただけます。</p>
+      <div class="craft-item">
+        <img src="https://hayazai.com/lp/img/p5_pate.webp" alt="一枚ずつ手作業で補修するパテ作業" loading="lazy">
+        <div class="craft-cap"><strong>補修</strong>一枚ずつ手作業で整えます</div>
+      </div>
+      <div class="craft-item">
+        <img src="https://hayazai.com/lp/img/p4_choshiage.webp" alt="超仕上げを終えた桧フローリングの艶やかな表面" loading="lazy">
+        <div class="craft-cap"><strong>超仕上げ</strong>カンナがけでなめらかな肌ざわりに</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <h2 class="section-title">商品カテゴリ</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="products.html#flooring15">
-        <img src="https://item-shopping.c.yimg.jp/i/j/hayazaimuku_ff151082000a" alt="桧フローリング15mm" loading="lazy">
-        <div class="cat-card-body">
-          <h3>桧フローリング 15mm厚</h3>
-          <p>床材の定番。新築・リフォームに。</p>
-        </div>
-      </a>
-      <a class="cat-card" href="products.html#flooring12">
-        <img src="https://item-shopping.c.yimg.jp/i/j/hayazaimuku_fk151082000a" alt="桧フローリング12mm" loading="lazy">
-        <div class="cat-card-body">
-          <h3>桧フローリング 12mm厚</h3>
-          <p>軽くて扱いやすい。上張りにも。</p>
-        </div>
-      </a>
-      <a class="cat-card" href="products.html#panel">
-        <img src="https://item-shopping.c.yimg.jp/i/j/hayazaimuku_pf121032000a" alt="桧羽目板" loading="lazy">
-        <div class="cat-card-body">
-          <h3>桧羽目板 12mm厚</h3>
-          <p>壁・天井に。香りに包まれる空間へ。</p>
-        </div>
-      </a>
+<!-- ===== 選ばれる理由 ===== -->
+<section class="section bg-cream">
+  <div class="container ta-center">
+    <div class="section-label">Why Hayazai</div>
+    <h2 class="section-title">工場から直接買う、6つのメリット</h2>
+    <div class="reason-grid" style="margin-top:32px;text-align:left;">
+      <div class="reason">
+        <div class="reason-icon">🏷️</div>
+        <h3>当店の全チャネルで最安</h3>
+        <p>モール手数料を還元しているため、同じ商品がヤフー店・楽天店より必ず安く買えます。価格はモール改定に合わせて自動更新。</p>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">🪵</div>
+        <h3>乾燥と仕上げは、自社の手で</h3>
+        <p>原板を厳選仕入れし、天然乾燥・加工・カンナ仕上げまで自社で実施。質感を左右する最重要工程を握るから、適正価格で高品質を実現できます。</p>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">🌿</div>
+        <h3>天然乾燥・超仕上げ</h3>
+        <p>木の油分と香りを残す天然乾燥。一枚ずつカンナをかけた滑らかな手触り。年月とともに深まる艶と踏み心地が違います。</p>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">📦</div>
+        <h3>無料サンプルで確かめてから</h3>
+        <p>香り・手触り・色味は写真では伝わりません。ご希望のグレードを無料（送料も無料）でお送りします。触って違うと思ったら、それで構いません。</p>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">📐</div>
+        <h3>豊富なサイズと4等級</h3>
+        <p>910〜4000mmの長さ×4段階の等級。フローリングは本実突付、羽目板は本実目透し（2mm）仕上げです。</p>
+      </div>
+      <div class="reason">
+        <div class="reason-icon">💬</div>
+        <h3>何束必要かも相談できる</h3>
+        <p>「何枚いる？」「どのグレードが合う？」など、些細なことでもメールでお気軽に。余りが出ないよう一緒に計算します。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
+<!-- ===== グレード ===== -->
+<section class="section" id="grade">
+  <div class="container ta-center">
+    <div class="section-label">Grade</div>
+    <h2 class="section-title">グレード（節）の選び方</h2>
+    <p class="section-desc">安いものには理由が、高いものには価値があります。節の違いを正直にご説明しますので、用途・予算・お好みで選んでください。</p>
+    <div class="grade-grid" style="margin-top:32px;text-align:left;">
+      <div class="grade-card">
+        <img src="https://hayazai.com/images/grade/grade_setsuari.webp" alt="節有グレードの桧フローリング実物" loading="lazy">
+        <div class="grade-body">
+          <div class="grade-name">節有<span class="grade-kana">ふしあり</span></div>
+          <div class="grade-sub">スタンダード / 最も手頃</div>
+          <p>大小の生節と埋木が混在する自然な風合い。強度は十分で、桧本来の香り・調湿性は上位等級と同じです。DIYで人気。</p>
+        </div>
+      </div>
+      <div class="grade-card">
+        <span class="grade-pop">一番人気</span>
+        <img src="https://hayazai.com/images/grade/grade_kobushi.webp" alt="小節グレードの桧フローリング実物" loading="lazy">
+        <div class="grade-body">
+          <div class="grade-name">小節<span class="grade-kana">こぶし</span></div>
+          <div class="grade-sub">バランス型</div>
+          <p>直径20mm以下の埋木のみ（2m材は2個以下／3m・4m材は3個以下）。見た目と価格のバランスが良く、当店で最も選ばれています。</p>
+        </div>
+      </div>
+      <div class="grade-card">
+        <img src="https://hayazai.com/images/grade/grade_tokujosho.webp" alt="特上小グレードの桧フローリング実物" loading="lazy">
+        <div class="grade-body">
+          <div class="grade-name">特上小<span class="grade-kana">とくじょうこ</span></div>
+          <div class="grade-sub">高品質</div>
+          <p>埋木なし。小さな葉節が数か所のみで、整った美しい木肌。木本来の表情を活かしたい、こだわりの空間に。</p>
+        </div>
+      </div>
+      <div class="grade-card">
+        <img src="https://hayazai.com/images/grade/grade_musetsu.webp" alt="無節グレードの桧フローリング実物" loading="lazy">
+        <div class="grade-body">
+          <div class="grade-name">無節<span class="grade-kana">むぶし</span></div>
+          <div class="grade-sub">最高グレード</div>
+          <p>節が一切なく、均一で美しい木肌。リビング・寝室・茶室など、最もこだわりたい空間に。旅館や高級住宅にも使われます。</p>
+        </div>
+      </div>
+    </div>
+    <p class="section-desc" style="margin-top:24px;">
+      迷ったら、<a href="sample.html" style="color:var(--price);font-weight:700;text-decoration:underline;">無料サンプル</a>で実物を見比べるのが確実です。
+    </p>
+  </div>
+</section>
+
+<!-- ===== お客様の声 ===== -->
+<section class="section bg-cream" id="voice">
   <div class="container">
+    <div class="ta-center">
+      <div class="section-label">Customer Voice</div>
+      <h2 class="section-title">お客様の声</h2>
+    </div>
+    <div class="rating-summary">
+      <div class="rating-big">4.97</div>
+      <div class="rating-meta">
+        <span class="stars">★★★★★</span>
+        累計600件以上のご感想／★5が97%
+      </div>
+    </div>
+    <div class="voice-grid">
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>13.5畳のリビングを全面改装するために、カンナ仕上げ・両端カットで5セット（100枚）注文しました。クリアオイルで仕上げると、桧特有の色合いが鮮やかになりました。業者に依頼すれば30万円ほどかかるところを、わずか5万円ほどでできたことにも感動しました。もっと早くやっておけばよかったと思います。</p>
+        <div class="voice-name">Y様（リビング／DIY施工）</div>
+      </div>
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>必要十分。コスパはかなり高い。きれいに節埋めされてますので、より自然な雰囲気が好きな人にはおすすめかと思います。商品画像と実物にほとんど差がないのは良心的。</p>
+        <div class="voice-name">R様</div>
+      </div>
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>A級品とありましたが、価格が探した限りでは何処よりも手頃で、内心Bかそれ以下を想定しておりましたが予想より良い商品です。遠方にも関わらず早い到着で自宅まで発送して頂きありがとうございます。材料・値段、文句なしで気持ちは星10です。</p>
+        <div class="voice-name">G様</div>
+      </div>
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>商品の品質、発送までの期間、その間の連絡等、不満なところは一切ありませんでした。サンプルも購入しましたが製品と同等品であり、信頼のおける一店だと思いました。</p>
+        <div class="voice-name">購入者様</div>
+      </div>
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>ダイニングキッチンの床に敷くために購入しました。部屋の雰囲気が明るくなり、桧の香りもよく、非常に満足しています。表面はなめらかで触り心地が良いです。節も丁寧に埋めてあり、全く問題ありませんでした。</p>
+        <div class="voice-name">F様（ダイニングキッチン）</div>
+      </div>
+      <div class="voice">
+        <div class="voice-stars">★★★★★</div>
+        <p>土蔵の二階9.5畳用に20枚5セット注文し、4日後には届きました。板材は上質で節も丁寧に処理してありました。ほとんど節のない物もあって、バランス良く張ることができ大満足です。良い香りがして快適な空間になり、家族にも好評です。</p>
+        <div class="voice-name">K様（土蔵二階 9.5畳）</div>
+      </div>
+    </div>
+    <p class="voice-note">
+      ※ 商品をお届けしたお客様よりお寄せいただいたご感想の一部を掲載しています。<br>
+      個人が特定される情報は伏せ、イニシャルで表記しております。文意を変えない範囲で表記を整えている場合があります。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 施工事例 ===== -->
+<section class="section">
+  <div class="container ta-center">
+    <div class="section-label">Works</div>
+    <h2 class="section-title">お客様の施工事例</h2>
+    <p class="section-desc">実際に当社の桧をお使いいただいた現場の写真です。</p>
+    <div class="gallery-grid" style="margin-top:30px;">
+      <div class="gal"><img src="https://hayazai.com/images/gallery/fl_A8_1_md.webp" alt="リビングの桧フローリング" loading="lazy"><div class="gal-cap">リビング／フローリング15mm 小節</div></div>
+      <div class="gal"><img src="https://hayazai.com/images/gallery/pa_A8_sauna_1_md.webp" alt="プライベートサウナの桧羽目板" loading="lazy"><div class="gal-cap">プライベートサウナ／羽目板12mm 節有</div></div>
+      <div class="gal"><img src="https://hayazai.com/images/gallery/p_PA3_md.webp" alt="リビングの天井と壁に桧羽目板" loading="lazy"><div class="gal-cap">リビング天井・壁／羽目板12mm</div></div>
+      <div class="gal"><img src="https://hayazai.com/images/gallery/p_PA5_md.webp" alt="浴室の壁と天井に張った桧羽目板" loading="lazy"><div class="gal-cap">浴室 壁・天井／羽目板12mm 節有</div></div>
+      <div class="gal"><img src="https://hayazai.com/images/gallery/IMG00607_HDR_md.webp" alt="炉裏部屋の天井と壁の羽目板施工" loading="lazy"><div class="gal-cap">炉裏部屋 天井・壁／羽目板12mm</div></div>
+      <div class="gal"><img src="https://hayazai.com/images/gallery/p_PA8_md.webp" alt="キャンピングカー内装の桧羽目板DIY" loading="lazy"><div class="gal-cap">キャンピングカー内装DIY／羽目板12mm</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== なぜ桧なのか ===== -->
+<section class="section bg-pale">
+  <div class="container ta-center">
+    <div class="section-label">Why Hinoki</div>
+    <h2 class="section-title">なぜ、桧なのか</h2>
+    <p class="section-desc">フローリング材は無数にある中、職人や工務店が「桧」を選ぶ理由があります。</p>
+    <div class="benefit-grid" style="margin-top:30px;text-align:left;">
+      <div class="benefit">
+        <img src="https://hayazai.com/images/ai/B06_benefit_antibacterial.webp" alt="抗菌・防カビ" loading="lazy">
+        <div class="benefit-body"><div class="benefit-no">01</div><h3>抗菌・防カビ</h3><p>桧の精油に含まれるα-カジノールなどの成分には抗菌・防カビ作用があるとされ、ダニ・カビの繁殖を抑制。裸足で歩く床を清潔に保ちやすい木材です。</p></div>
+      </div>
+      <div class="benefit">
+        <img src="https://hayazai.com/images/ai/B07_benefit_humidity.webp" alt="調湿・断熱" loading="lazy">
+        <div class="benefit-body"><div class="benefit-no">02</div><h3>調湿・断熱</h3><p>木の細胞が水分を吸放湿し、室内湿度を自然に調整。冬はひんやりせず、夏はべたつかない快適な床を実現します。</p></div>
+      </div>
+      <div class="benefit">
+        <img src="https://hayazai.com/images/ai/B08_benefit_aroma.webp" alt="香りの力" loading="lazy">
+        <div class="benefit-body"><div class="benefit-no">03</div><h3>香りの力</h3><p>桧の芳香成分（α-ピネン等）は副交感神経を優位にし、ストレスを和らげることが研究で報告されています。帰宅するたび、深呼吸したくなる空間へ。</p></div>
+      </div>
+      <div class="benefit">
+        <img src="https://hayazai.com/images/ai/B09_benefit_durability.webp" alt="強度と長寿命" loading="lazy">
+        <div class="benefit-body"><div class="benefit-no">04</div><h3>強度と長寿命</h3><p>圧縮・曲げ強度が高く、耐久性に優れた桧。年を重ねるほど「飴色」に輝く経年美化を楽しみながら、数十年使い続けられます。</p></div>
+      </div>
+      <div class="benefit">
+        <img src="https://hayazai.com/images/ai/B10_benefit_climate.webp" alt="日本の気候に最適" loading="lazy">
+        <div class="benefit-body"><div class="benefit-no">05</div><h3>日本の気候に最適</h3><p>高温多湿な日本で育つ国産桧は、日本の住環境に最も適した建材。古くから社寺建築にも使われてきた実績が証明しています。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 使われ方 ===== -->
+<section class="section">
+  <div class="container ta-center">
+    <div class="section-label">Use Scenes</div>
+    <h2 class="section-title">こんな場所に使われています</h2>
+    <div class="scene-grid" style="margin-top:28px;">
+      <div class="scene"><img src="https://hayazai.com/images/ai/C01_scene_bedroom.webp" alt="寝室" loading="lazy"><div class="scene-cap"><strong>寝室</strong><span>桧の香りで深い眠り</span></div></div>
+      <div class="scene"><img src="https://hayazai.com/images/ai/C02_scene_kidsroom.webp" alt="子ども部屋" loading="lazy"><div class="scene-cap"><strong>子ども部屋</strong><span>はだしで遊んでも安心</span></div></div>
+      <div class="scene"><img src="https://hayazai.com/images/ai/C03_scene_washitsu.webp" alt="和室" loading="lazy"><div class="scene-cap"><strong>和室</strong><span>羽目板で本格的な和の趣</span></div></div>
+      <div class="scene"><img src="https://hayazai.com/images/ai/C04_scene_entrance.webp" alt="玄関・廊下" loading="lazy"><div class="scene-cap"><strong>玄関・廊下</strong><span>桧の温もりがお出迎え</span></div></div>
+      <div class="scene"><img src="https://hayazai.com/images/ai/C05_scene_sauna.webp" alt="サウナ" loading="lazy"><div class="scene-cap"><strong>サウナ</strong><span>耐熱・抗菌で本格空間に</span></div></div>
+      <div class="scene"><img src="https://hayazai.com/images/ai/C06_scene_office.webp" alt="店舗・オフィス" loading="lazy"><div class="scene-cap"><strong>店舗・オフィス</strong><span>滞在時間が伸びる内装</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 不安に答える ===== -->
+<section class="section bg-cream">
+  <div class="container ta-center">
+    <div class="section-label">Before You Buy</div>
+    <h2 class="section-title">無垢の床、こんな不安はありませんか？</h2>
+    <p class="section-desc">高い買い物だからこそ、迷って当然です。みなさん同じところで悩まれます。</p>
+    <div class="worry-grid" style="margin-top:30px;text-align:left;">
+      <div class="worry">
+        <h3>「写真だけで、本当の質感は分かるのかな」</h3>
+        <p>手触りや木目の表情は、画面ごしには伝わりません。色味も、写真はあくまで目安です。</p>
+        <span class="ans">→ 無料サンプルで、届く前に実物を確かめられます（送料も無料）</span>
+      </div>
+      <div class="worry">
+        <h3>「顔の見えない相手から買うのは不安」</h3>
+        <p>顔の見えない相手から、安くない買い物。当然の警戒心です。</p>
+        <span class="ans">→ つくっているのは、私たち自身です。600件以上のご感想もご覧ください</span>
+      </div>
+      <div class="worry">
+        <h3>「結局、総額いくらかかるの？」</h3>
+        <p>商品代に送料、そもそも何束必要かもわからない。</p>
+        <span class="ans">→ ご注文後、送料込みの総額をメールでご案内。ご納得後のお支払いです</span>
+      </div>
+      <div class="worry">
+        <h3>「どのグレードを選べばいいかわからない」</h3>
+        <p>節有・小節・特上小・無節…何がどう違うの？</p>
+        <span class="ans">→ 上のグレード解説をご覧ください。ご相談もお気軽に</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 約束 ===== -->
+<section class="section promise">
+  <div class="container narrow ta-center">
+    <div class="section-label" style="color:var(--wood-light);">Our Promise</div>
+    <h2 class="section-title">もし、届いてから気になることがあったら</h2>
+    <p class="promise-body">
+      桧は、一枚ずつ表情の違う自然素材です。<br>
+      最後の仕上げと検品は人の手で行っています。だから正直なところ、「100%完璧」とは言い切れません。<br><br>
+      初期不良や配送中の事故であれば、商品到着後7日以内のご連絡で、<strong>交換または返金（送料は当店負担）</strong>にて対応します。<br><br>
+      創業から半世紀以上。慢心することなく、<strong>人と人として向き合っていく。</strong><br>
+      それが、私たちがいちばん大切にしていることです。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 流れ ===== -->
+<section class="section">
+  <div class="container ta-center">
+    <div class="section-label">How to Order</div>
     <h2 class="section-title">ご注文の流れ</h2>
-    <div class="features">
-      <div class="feature"><span class="num">1</span><h3>カートで注文</h3><p>商品をカートに入れて、お届け先を入力して注文を確定します。この時点ではまだお支払いは発生しません。</p></div>
-      <div class="feature"><span class="num">2</span><h3>合計金額のご案内</h3><p>在庫を確認のうえ、送料込みの合計金額とお振込先を1営業日以内にメールでご案内します。</p></div>
-      <div class="feature"><span class="num">3</span><h3>お振込 → 発送</h3><p>ご入金の確認後、工場から発送します（通常3〜7営業日）。長尺材も路線便で全国にお届けします。</p></div>
+    <p class="section-desc">カートでのご注文時点では、まだお支払いは発生しません。</p>
+    <div class="flow-grid" style="margin-top:30px;text-align:left;">
+      <div class="flow">
+        <img src="https://hayazai.com/images/ai/C07_step_select.webp" alt="商品と数量を選ぶ" loading="lazy">
+        <div class="flow-body"><div class="flow-step">STEP 01</div><h3>商品と数量を選ぶ</h3><p>寸法・グレードをご確認のうえ、必要な数量をカートに入れてください。</p></div>
+      </div>
+      <div class="flow">
+        <img src="https://hayazai.com/images/ai/C08_step_inquire.webp" alt="注文を確定する" loading="lazy">
+        <div class="flow-body"><div class="flow-step">STEP 02</div><h3>ご注文を確定</h3><p>お届け先を入力して送信。この時点ではお支払いは発生しません。</p></div>
+      </div>
+      <div class="flow">
+        <img src="https://hayazai.com/images/ai/C09_step_ship.webp" alt="金額のご案内" loading="lazy">
+        <div class="flow-body"><div class="flow-step">STEP 03</div><h3>総額のご案内</h3><p>在庫を確認し、送料込みの合計金額と振込先を1営業日以内にメールでご案内します。</p></div>
+      </div>
+      <div class="flow">
+        <img src="https://hayazai.com/images/ai/C10_step_deliver.webp" alt="振込・発送" loading="lazy">
+        <div class="flow-body"><div class="flow-step">STEP 04</div><h3>お振込 → 発送</h3><p>ご入金確認後、通常2〜5営業日で自社工場から発送。全国対応です。</p></div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <h2>まずは、その手で確かめてください。</h2>
+  <p>香り・手触り・木目の表情は、写真では伝わりません。<br>無料サンプルをご用意しています（送料も無料）。触って「違うな」と思ったら、それで構いません。</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn btn-primary" href="products.html">商品一覧・価格を見る</a>
+    <a class="btn btn-ghost" href="sample.html">無料サンプルを請求する</a>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
     <div class="footer-links">
-      <a href="products.html">商品一覧</a>
-      <a href="guide.html">ご利用ガイド</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
       <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
     </div>
     <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
   </div>
@@ -113,5 +439,13 @@
 
 <script src="https://hayazai.com/data/products.js"></script>
 <script src="js/shop.js"></script>
+<script>
+  // 創業年からの年数を自動更新（1968年創業）
+  (function () {
+    const y = new Date().getFullYear() - 1968;
+    const el = document.getElementById('stat-years');
+    if (el) el.textContent = y + '年以上';
+  })();
+</script>
 </body>
 </html>

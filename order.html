@@ -7,7 +7,8 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
@@ -20,17 +21,22 @@
     </a>
     <button id="nav-toggle" aria-label="メニュー">☰</button>
     <nav class="site-nav" id="site-nav">
-      <a href="products.html">商品一覧</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル</a>
       <a href="guide.html">ご利用ガイド</a>
-      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
     </nav>
   </div>
 </header>
 
-<h1 class="page-title">ご注文手続き</h1>
-<p class="page-lead">この時点ではお支払いは発生しません。送料込みの合計金額を折り返しメールでご案内します。</p>
+<div class="page-head">
+  <div class="container">
+    <h1>ご注文手続き</h1>
+    <p>この時点ではお支払いは発生しません。送料込みの総額を折り返しメールでご案内します。</p>
+  </div>
+</div>
 
-<div class="container" style="padding-bottom:40px;">
+<div class="container" style="padding:40px 20px 70px;">
   <div class="order-grid">
 
     <form class="form-card" id="order-form" novalidate>
@@ -50,7 +56,7 @@
       </div>
 
       <div class="form-row">
-        <label for="f-company">会社名（法人・事業者の方）</label>
+        <label for="f-company">会社名<span class="opt">法人・事業者の方</span></label>
         <input type="text" id="f-company" name="company" autocomplete="organization">
       </div>
 
@@ -65,15 +71,13 @@
       </div>
 
       <div class="form-row">
-        <label for="f-zip">郵便番号</label>
-        <input type="text" id="f-zip" name="zip" autocomplete="postal-code" placeholder="000-0000" style="max-width:180px;">
+        <label for="f-zip">郵便番号<span class="opt">任意</span></label>
+        <input type="text" id="f-zip" name="zip" autocomplete="postal-code" placeholder="000-0000" style="max-width:190px;">
       </div>
 
       <div class="form-row">
         <label for="f-pref">都道府県<span class="req">必須</span></label>
-        <select id="f-pref" name="prefecture" required>
-          <option value="">選択してください</option>
-        </select>
+        <select id="f-pref" name="prefecture" required><option value="">選択してください</option></select>
       </div>
 
       <div class="form-row">
@@ -82,13 +86,13 @@
       </div>
 
       <div class="form-row">
-        <label for="f-addr2">建物名・部屋番号</label>
+        <label for="f-addr2">建物名・部屋番号<span class="opt">任意</span></label>
         <input type="text" id="f-addr2" name="address2" autocomplete="address-line2">
       </div>
 
       <div class="form-row">
-        <label for="f-note">備考（納期のご希望・ご質問など）</label>
-        <textarea id="f-note" name="note"></textarea>
+        <label for="f-note">備考<span class="opt">納期のご希望・ご質問など</span></label>
+        <textarea id="f-note" name="note" placeholder="施工予定日、お届け希望時期、ご質問などをご記入ください。"></textarea>
       </div>
 
       <div class="hp-field" aria-hidden="true">
@@ -96,11 +100,13 @@
       </div>
 
       <div class="notice-box" id="warn-4m" style="display:none;">
-        <strong>4m材を含むご注文について：</strong>個人のお客様は、路線便の規定により西濃運輸の最寄り支店でのお受け取り（支店止め）となります。法人・事業者のお客様はご住所までお届けできます。
+        <strong style="color:var(--wood-dark);">4m材を含むご注文について</strong><br>
+        路線便の規定により、個人のお客様は西濃運輸の最寄り支店でのお受け取り（支店止め）となります。法人・事業者のお客様はご住所までお届けできます。
       </div>
 
       <div class="notice-box">
-        お支払いは<strong>銀行振込（前払い）</strong>です。ご注文確定後、在庫確認のうえ送料込みの合計金額とお振込先を1営業日以内にメールでご案内します。ご入金確認後の発送となります。
+        <strong style="color:var(--wood-dark);">お支払いは銀行振込（前払い）です</strong><br>
+        ご注文確定後、在庫を確認のうえ、送料込みの合計金額とお振込先を1営業日以内にメールでご案内します。金額にご納得いただいてからのお支払いで大丈夫です。ご入金確認後、通常2〜5営業日で自社工場から発送します。
       </div>
 
       <div class="order-error" id="order-error"></div>
@@ -109,10 +115,9 @@
 
     <div class="summary-card">
       <h2>ご注文内容</h2>
-      <table class="summary-table">
-        <tbody id="order-items"></tbody>
-      </table>
+      <table class="summary-table"><tbody id="order-items"></tbody></table>
       <div class="summary-total">商品合計（税込）<strong id="order-total">¥0</strong></div>
+      <div class="cart-saved" id="order-saved"></div>
       <p class="cart-note">送料は別途。ご注文確認メールでご案内します。</p>
       <a class="link-back" href="cart.html">← カートに戻る</a>
     </div>
@@ -123,10 +128,13 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
     <div class="footer-links">
-      <a href="products.html">商品一覧</a>
-      <a href="guide.html">ご利用ガイド</a>
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
       <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
     </div>
     <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
   </div>

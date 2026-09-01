@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料サンプル請求｜無垢ひのき工場直販 ひのき魂</title>
+<meta name="description" content="国産無垢桧の実物サンプルを無料でお送りします（送料も無料）。節有・小節・特上小・無節から選べます。買う前に香り・手触り・色味をお確かめください。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-sub">無垢ひのき工場直販</span>
+      <span class="brand-main">ひのき魂</span>
+    </a>
+    <button id="nav-toggle" aria-label="メニュー">☰</button>
+    <nav class="site-nav" id="site-nav">
+      <a href="products.html">商品一覧・価格</a>
+      <a href="index.html#grade">グレードの選び方</a>
+      <a href="index.html#voice">お客様の声</a>
+      <a href="sample.html">無料サンプル</a>
+      <a href="guide.html">ご利用ガイド</a>
+      <a class="cart-link" href="cart.html">カート<span class="cart-badge is-empty">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <h1>無料サンプル請求</h1>
+    <p>買う前に、その手で確かめてください。サンプル代・送料ともに無料です。</p>
+  </div>
+</div>
+
+<div class="container" style="padding:44px 20px 70px;">
+  <div class="order-grid">
+
+    <form class="form-card" id="sample-form" novalidate>
+      <h2>お届け先情報</h2>
+
+      <div class="form-row">
+        <label for="s-name">お名前<span class="req">必須</span></label>
+        <input type="text" id="s-name" name="name" required autocomplete="name" placeholder="山田 太郎">
+      </div>
+
+      <div class="form-row">
+        <label for="s-company">会社名<span class="opt">任意</span></label>
+        <input type="text" id="s-company" name="company" autocomplete="organization">
+      </div>
+
+      <div class="form-row">
+        <label for="s-email">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="s-email" name="email" required autocomplete="email" placeholder="example@example.com">
+      </div>
+
+      <div class="form-row">
+        <label for="s-tel">電話番号<span class="req">必須</span></label>
+        <input type="tel" id="s-tel" name="tel" required autocomplete="tel" placeholder="090-0000-0000">
+        <p style="font-size:0.76rem;color:var(--text-light);margin-top:5px;">配送伝票の記載に必要です。</p>
+      </div>
+
+      <div class="form-row">
+        <label for="s-zip">郵便番号<span class="opt">任意</span></label>
+        <input type="text" id="s-zip" name="zip" autocomplete="postal-code" placeholder="000-0000" style="max-width:190px;">
+      </div>
+
+      <div class="form-row">
+        <label for="s-pref">都道府県<span class="req">必須</span></label>
+        <select id="s-pref" name="prefecture" required><option value="">選択してください</option></select>
+      </div>
+
+      <div class="form-row">
+        <label for="s-addr1">市区町村・番地<span class="req">必須</span></label>
+        <input type="text" id="s-addr1" name="address1" required autocomplete="address-line1">
+      </div>
+
+      <div class="form-row">
+        <label for="s-addr2">建物名・部屋番号<span class="opt">任意</span></label>
+        <input type="text" id="s-addr2" name="address2" autocomplete="address-line2">
+      </div>
+
+      <div class="form-row">
+        <label>ご希望の商品<span class="req">必須・複数選択可</span></label>
+        <div class="check-grid">
+          <label><input type="checkbox" name="kind[]" value="フローリング15mm"> フローリング15mm</label>
+          <label><input type="checkbox" name="kind[]" value="フローリング12mm"> フローリング12mm</label>
+          <label><input type="checkbox" name="kind[]" value="羽目板12mm"> 羽目板12mm</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>確かめたいグレード<span class="req">必須・複数選択可</span></label>
+        <div class="check-grid">
+          <label><input type="checkbox" name="grade[]" value="節有"> 節有（ふしあり）</label>
+          <label><input type="checkbox" name="grade[]" value="小節"> 小節（こぶし）</label>
+          <label><input type="checkbox" name="grade[]" value="特上小"> 特上小（とくじょうこ）</label>
+          <label><input type="checkbox" name="grade[]" value="無節"> 無節（むぶし）</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="s-note">備考・ご要望<span class="opt">任意</span></label>
+        <textarea id="s-note" name="note" placeholder="施工場所・ご予算・気になる点など、なんでもお書きください。"></textarea>
+      </div>
+
+      <div class="hp-field" aria-hidden="true">
+        <label>この欄には入力しないでください<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="notice-box">
+        通常2〜5営業日以内に発送します。ご入力いただいた情報は、サンプル発送とご連絡以外には使用しません。
+      </div>
+
+      <div class="order-error" id="sample-error"></div>
+      <button type="submit" class="btn btn-primary btn-lg" style="margin-top:10px;">無料サンプルを申し込む（送料も無料）</button>
+    </form>
+
+    <div class="summary-card">
+      <h2>お届けするもの</h2>
+      <img src="https://hayazai.com/images/grade/grade_kobushi.webp" alt="桧のサンプル材" style="border-radius:var(--radius);margin-bottom:16px;" loading="lazy">
+      <ul style="padding-left:20px;font-size:0.87rem;color:var(--text-mid);">
+        <li style="margin-bottom:9px;">サンプル材 約110×300mm（選んだ商品ごと）</li>
+        <li style="margin-bottom:9px;">節有・小節・特上小・無節から、任意の商品をお選びいただけます</li>
+        <li style="margin-bottom:9px;">桧本来の香りを実感できる天然乾燥・超仕上げ（カンナ仕上げ）品</li>
+        <li>ご不明点はメールでいつでもご相談ください</li>
+      </ul>
+      <div class="notice-box" style="margin-top:18px;">
+        <strong style="color:var(--wood-dark);">触って「違うな」と思ったら、<br>それで構いません。</strong><br>
+        木材は、届いてから後悔のできない買い物です。だからこそ、実物に触れてから選んでいただきたいと考えています。
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">ひのき魂</div>
+    <div class="footer-tag">無垢ひのき工場直販／静岡県磐田市の製材工場から直接お届けします</div>
+    <div class="footer-links">
+      <a href="products.html">商品一覧・価格</a>
+      <a href="sample.html">無料サンプル請求</a>
+      <a href="guide.html">ご利用ガイド・FAQ</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="mailto:info@hayazai.com">お問い合わせ</a>
+    </div>
+    <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
+  </div>
+</footer>
+
+<script src="https://hayazai.com/data/products.js"></script>
+<script src="js/shop.js"></script>
+<script>
+  const PREFS = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+  const sel = document.getElementById('s-pref');
+  PREFS.forEach(p => { const o = document.createElement('option'); o.value = o.textContent = p; sel.appendChild(o); });
+</script>
+</body>
+</html>
