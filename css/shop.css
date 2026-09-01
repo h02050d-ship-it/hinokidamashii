@@ -1,0 +1,284 @@
+/* =====================================================
+   ひのき魂 オンラインストア 共通スタイル
+   ===================================================== */
+
+:root {
+  --cream: #faf6ee;
+  --paper: #ffffff;
+  --wood: #8b5e34;
+  --wood-dark: #4a3421;
+  --ink: #2e261d;
+  --accent: #b3541e;
+  --green: #4f6f46;
+  --line: #e6dccb;
+  --shadow: 0 2px 12px rgba(74, 52, 33, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+img { max-width: 100%; }
+a { color: var(--accent); }
+
+.serif { font-family: 'Shippori Mincho', 'Yu Mincho', serif; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- ヘッダー ---------- */
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1080px; margin: 0 auto; padding: 10px 16px;
+  display: flex; align-items: center; gap: 20px;
+}
+.brand { text-decoration: none; color: var(--wood-dark); line-height: 1.3; }
+.brand-sub { display: block; font-size: 0.65rem; letter-spacing: 0.18em; color: var(--wood); }
+.brand-main { font-family: 'Shippori Mincho', serif; font-size: 1.45rem; font-weight: 700; letter-spacing: 0.1em; }
+
+.site-nav { margin-left: auto; display: flex; align-items: center; gap: 18px; }
+.site-nav a { color: var(--ink); text-decoration: none; font-size: 0.88rem; }
+.site-nav a:hover { color: var(--accent); }
+
+.cart-link { position: relative; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+.cart-badge {
+  background: var(--accent); color: #fff; border-radius: 999px;
+  font-size: 0.7rem; min-width: 18px; height: 18px; line-height: 18px;
+  text-align: center; padding: 0 4px;
+}
+.cart-badge.is-empty { display: none; }
+
+#nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--wood-dark); }
+
+@media (max-width: 720px) {
+  #nav-toggle { display: block; margin-left: auto; }
+  .site-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--paper); border-bottom: 1px solid var(--line);
+    flex-direction: column; padding: 14px 20px; gap: 14px; margin: 0;
+  }
+  .site-nav.open { display: flex; }
+  .cart-link-fixed { display: flex !important; }
+}
+
+/* ---------- ヒーロー ---------- */
+
+.hero {
+  background: linear-gradient(rgba(46, 38, 29, 0.45), rgba(46, 38, 29, 0.45)),
+    url('https://hayazai.com/images/hero_hinoki.jpg') center/cover no-repeat, #7a5c3d;
+  color: #fff; text-align: center; padding: 84px 16px;
+}
+.hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(1.6rem, 4.5vw, 2.6rem); letter-spacing: 0.12em; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.hero p { margin-top: 14px; font-size: clamp(0.9rem, 2.5vw, 1.05rem); text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+.hero .btn { margin-top: 26px; }
+
+.hero-off {
+  display: inline-block; margin-top: 20px; background: var(--accent); color: #fff;
+  padding: 8px 22px; border-radius: 4px; font-weight: 700; letter-spacing: 0.06em;
+  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+}
+
+/* ---------- 汎用 ---------- */
+
+.section { padding: 56px 0; }
+.section-title {
+  font-family: 'Shippori Mincho', serif; font-size: 1.5rem; text-align: center;
+  color: var(--wood-dark); letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.section-lead { text-align: center; color: #6b5d4b; margin-bottom: 32px; font-size: 0.92rem; }
+
+.btn {
+  display: inline-block; border: none; cursor: pointer; text-decoration: none;
+  border-radius: 6px; font-weight: 700; font-size: 0.95rem;
+  padding: 12px 28px; transition: opacity 0.15s; font-family: inherit;
+}
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-cart { background: var(--wood-dark); color: #fff; padding: 10px 16px; font-size: 0.85rem; flex: 1; }
+.btn-lg { padding: 15px 40px; font-size: 1.05rem; width: 100%; text-align: center; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+
+/* ---------- 特長 ---------- */
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.feature {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  padding: 26px 22px; box-shadow: var(--shadow);
+}
+.feature h3 { font-size: 1.02rem; color: var(--wood-dark); margin-bottom: 8px; }
+.feature p { font-size: 0.88rem; color: #5d5142; }
+.feature .num { font-family: 'Shippori Mincho', serif; color: var(--accent); font-size: 1.6rem; display: block; margin-bottom: 6px; }
+
+/* ---------- カテゴリカード ---------- */
+
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.cat-card {
+  display: block; text-decoration: none; background: var(--paper);
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+  color: var(--ink); transition: transform 0.15s;
+}
+.cat-card:hover { transform: translateY(-3px); }
+.cat-card img { width: 100%; height: 160px; object-fit: cover; display: block; background: #efe6d6; }
+.cat-card-body { padding: 16px 18px; }
+.cat-card-body h3 { font-size: 1rem; color: var(--wood-dark); }
+.cat-card-body p { font-size: 0.82rem; color: #6b5d4b; margin-top: 4px; }
+
+/* ---------- 商品一覧 ---------- */
+
+.page-title { font-family: 'Shippori Mincho', serif; font-size: 1.6rem; color: var(--wood-dark); letter-spacing: 0.08em; text-align: center; padding: 40px 0 6px; }
+.page-lead { text-align: center; color: #6b5d4b; font-size: 0.9rem; margin-bottom: 10px; }
+
+.off-banner {
+  max-width: 720px; margin: 18px auto 0; background: #fdf1e6; border: 1px solid #eccdaa;
+  border-radius: 8px; padding: 12px 18px; font-size: 0.88rem; text-align: center; color: #7c451a;
+}
+
+.p-section { padding: 36px 0 8px; }
+.p-section-title {
+  font-family: 'Shippori Mincho', serif; font-size: 1.3rem; color: var(--wood-dark);
+  border-left: 5px solid var(--accent); padding-left: 12px; margin-bottom: 4px;
+}
+.p-section-desc { font-size: 0.86rem; color: #6b5d4b; margin-bottom: 18px; padding-left: 17px; }
+
+.p-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+
+.p-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.p-card-img { aspect-ratio: 4/3; background: #efe6d6; }
+.p-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+
+.p-badges { display: flex; gap: 6px; margin-bottom: 6px; }
+.badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.badge-a { background: var(--green); color: #fff; }
+.badge-b { background: #8d7c63; color: #fff; }
+.badge-q { background: #f0e7d6; color: var(--wood-dark); }
+
+.p-size { font-weight: 700; color: var(--wood-dark); font-size: 0.98rem; }
+.p-qty { font-size: 0.78rem; color: #6b5d4b; font-weight: 400; margin-left: 6px; }
+
+.p-price-row { margin-top: 8px; display: flex; align-items: center; gap: 8px; }
+.p-price-ref { font-size: 0.76rem; color: #978874; text-decoration: line-through; }
+.p-off { background: var(--accent); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; }
+
+.p-price { font-size: 1.45rem; font-weight: 700; color: var(--accent); line-height: 1.2; }
+.p-tax { font-size: 0.7rem; color: #6b5d4b; font-weight: 400; margin-left: 4px; }
+.p-per { font-size: 0.76rem; color: #6b5d4b; margin-bottom: 12px; }
+
+.p-actions { margin-top: auto; display: flex; gap: 8px; align-items: center; }
+
+.qty-input { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
+.qty-btn { width: 30px; height: 38px; border: none; background: #f5efe3; cursor: pointer; font-size: 1rem; color: var(--wood-dark); }
+.qty-num { width: 42px; border: none; text-align: center; font-size: 0.95rem; font-family: inherit; -moz-appearance: textfield; }
+.qty-num::-webkit-outer-spin-button, .qty-num::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+.load-error { text-align: center; padding: 60px 0; color: #8a5a2a; }
+
+/* ---------- カート ---------- */
+
+.cart-table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.cart-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.cart-table th { background: #f5efe3; font-size: 0.8rem; padding: 10px 12px; text-align: left; color: var(--wood-dark); }
+.cart-table td { padding: 12px; border-top: 1px solid var(--line); font-size: 0.9rem; vertical-align: middle; }
+.cart-img { width: 54px; height: 54px; object-fit: cover; border-radius: 6px; background: #efe6d6; }
+.cart-name { font-weight: 600; color: var(--wood-dark); font-size: 0.86rem; }
+.cart-sub { font-weight: 700; }
+.cart-del { background: none; border: none; color: #b0a28c; font-size: 1.1rem; cursor: pointer; }
+
+.cart-summary { max-width: 420px; margin: 26px 0 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 22px; box-shadow: var(--shadow); }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; font-size: 1rem; }
+.cart-total-row strong { font-size: 1.5rem; color: var(--accent); }
+.cart-note { font-size: 0.78rem; color: #6b5d4b; margin-top: 10px; }
+.cart-note-warn { color: #a04b12; background: #fdf1e6; border-radius: 6px; padding: 8px 10px; }
+.cart-summary .btn { margin-top: 16px; }
+.link-back { display: block; text-align: center; margin-top: 14px; font-size: 0.85rem; }
+
+.cart-empty { text-align: center; padding: 70px 0; color: #6b5d4b; }
+.cart-empty .btn { margin-top: 20px; }
+
+/* ---------- 注文フォーム ---------- */
+
+.order-grid { display: grid; grid-template-columns: 1fr 380px; gap: 28px; align-items: start; }
+@media (max-width: 880px) { .order-grid { grid-template-columns: 1fr; } }
+
+.form-card, .summary-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  padding: 26px; box-shadow: var(--shadow);
+}
+.form-card h2, .summary-card h2 { font-size: 1.05rem; color: var(--wood-dark); margin-bottom: 18px; border-left: 4px solid var(--accent); padding-left: 10px; }
+
+.form-row { margin-bottom: 16px; }
+.form-row label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--wood-dark); margin-bottom: 5px; }
+.req { color: var(--accent); font-size: 0.72rem; margin-left: 4px; }
+.form-row input[type=text], .form-row input[type=email], .form-row input[type=tel],
+.form-row select, .form-row textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px;
+  font-size: 0.95rem; font-family: inherit; background: #fffdf9;
+}
+.form-row textarea { min-height: 90px; resize: vertical; }
+.radio-row { display: flex; gap: 18px; font-size: 0.9rem; }
+.radio-row label { font-weight: 400; display: inline-flex; align-items: center; gap: 5px; margin: 0; }
+
+.summary-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.summary-table td { padding: 7px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ta-r { text-align: right; white-space: nowrap; } .ta-c { text-align: center; }
+.summary-total { display: flex; justify-content: space-between; margin-top: 14px; font-size: 0.95rem; }
+.summary-total strong { font-size: 1.4rem; color: var(--accent); }
+
+.notice-box { background: #fdf7ec; border: 1px solid #eadcbc; border-radius: 8px; padding: 12px 14px; font-size: 0.8rem; color: #6b5230; margin-top: 14px; }
+.order-error { color: #c0392b; font-size: 0.85rem; margin-top: 12px; min-height: 1.2em; }
+
+.hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+
+/* ---------- 静的ページ ---------- */
+
+.doc { max-width: 780px; margin: 0 auto; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 36px; box-shadow: var(--shadow); }
+.doc h2 { font-size: 1.1rem; color: var(--wood-dark); margin: 26px 0 10px; border-left: 4px solid var(--accent); padding-left: 10px; }
+.doc h2:first-child { margin-top: 0; }
+.doc p, .doc li { font-size: 0.9rem; color: #443a2c; }
+.doc ul { padding-left: 20px; }
+.doc-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.doc-table th, .doc-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.doc-table th { background: #f5efe3; width: 30%; color: var(--wood-dark); white-space: nowrap; }
+
+/* ---------- 完了ページ ---------- */
+
+.complete-box { max-width: 560px; margin: 60px auto; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 48px 30px; box-shadow: var(--shadow); }
+.complete-box h1 { font-family: 'Shippori Mincho', serif; font-size: 1.4rem; color: var(--wood-dark); margin-bottom: 16px; }
+.order-no { font-size: 1.1rem; font-weight: 700; color: var(--accent); background: #fdf1e6; border-radius: 6px; padding: 10px; margin: 18px 0; }
+.complete-box p { font-size: 0.9rem; color: #5d5142; }
+.complete-box .btn { margin-top: 26px; }
+
+/* ---------- フッター ---------- */
+
+.site-footer { background: var(--wood-dark); color: #d9cdbb; margin-top: 70px; padding: 36px 16px 28px; }
+.footer-inner { max-width: 1080px; margin: 0 auto; text-align: center; }
+.footer-brand { font-family: 'Shippori Mincho', serif; font-size: 1.2rem; letter-spacing: 0.12em; color: #f3ead9; }
+.footer-links { margin: 16px 0 10px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; }
+.footer-links a { color: #d9cdbb; font-size: 0.8rem; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-copy { font-size: 0.72rem; color: #a08f77; margin-top: 10px; }
+
+/* ---------- トースト ---------- */
+
+.toast-box { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 999; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: var(--wood-dark); color: #fff; padding: 11px 26px; border-radius: 999px;
+  font-size: 0.88rem; box-shadow: 0 4px 16px rgba(0,0,0,0.25); white-space: nowrap;
+  transition: opacity 0.4s;
+}
+.toast.out { opacity: 0; }

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご注文手続き｜無垢ひのき工場直販 ひのき魂</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-sub">無垢ひのき工場直販</span>
+      <span class="brand-main">ひのき魂</span>
+    </a>
+    <button id="nav-toggle" aria-label="メニュー">☰</button>
+    <nav class="site-nav" id="site-nav">
+      <a href="products.html">商品一覧</a>
+      <a href="guide.html">ご利用ガイド</a>
+      <a class="cart-link" href="cart.html">🛒 カート<span class="cart-badge is-empty">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<h1 class="page-title">ご注文手続き</h1>
+<p class="page-lead">この時点ではお支払いは発生しません。送料込みの合計金額を折り返しメールでご案内します。</p>
+
+<div class="container" style="padding-bottom:40px;">
+  <div class="order-grid">
+
+    <form class="form-card" id="order-form" novalidate>
+      <h2>お届け先情報</h2>
+
+      <div class="form-row">
+        <label>ご注文者区分<span class="req">必須</span></label>
+        <div class="radio-row">
+          <label><input type="radio" name="customer_type" value="個人" checked> 個人</label>
+          <label><input type="radio" name="customer_type" value="法人・事業者"> 法人・事業者</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="f-name">お名前<span class="req">必須</span></label>
+        <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="山田 太郎">
+      </div>
+
+      <div class="form-row">
+        <label for="f-company">会社名（法人・事業者の方）</label>
+        <input type="text" id="f-company" name="company" autocomplete="organization">
+      </div>
+
+      <div class="form-row">
+        <label for="f-email">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="example@example.com">
+      </div>
+
+      <div class="form-row">
+        <label for="f-tel">電話番号<span class="req">必須</span></label>
+        <input type="tel" id="f-tel" name="tel" required autocomplete="tel" placeholder="090-0000-0000">
+      </div>
+
+      <div class="form-row">
+        <label for="f-zip">郵便番号</label>
+        <input type="text" id="f-zip" name="zip" autocomplete="postal-code" placeholder="000-0000" style="max-width:180px;">
+      </div>
+
+      <div class="form-row">
+        <label for="f-pref">都道府県<span class="req">必須</span></label>
+        <select id="f-pref" name="prefecture" required>
+          <option value="">選択してください</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="f-addr1">市区町村・番地<span class="req">必須</span></label>
+        <input type="text" id="f-addr1" name="address1" required autocomplete="address-line1">
+      </div>
+
+      <div class="form-row">
+        <label for="f-addr2">建物名・部屋番号</label>
+        <input type="text" id="f-addr2" name="address2" autocomplete="address-line2">
+      </div>
+
+      <div class="form-row">
+        <label for="f-note">備考（納期のご希望・ご質問など）</label>
+        <textarea id="f-note" name="note"></textarea>
+      </div>
+
+      <div class="hp-field" aria-hidden="true">
+        <label>この欄には入力しないでください<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="notice-box" id="warn-4m" style="display:none;">
+        <strong>4m材を含むご注文について：</strong>個人のお客様は、路線便の規定により西濃運輸の最寄り支店でのお受け取り（支店止め）となります。法人・事業者のお客様はご住所までお届けできます。
+      </div>
+
+      <div class="notice-box">
+        お支払いは<strong>銀行振込（前払い）</strong>です。ご注文確定後、在庫確認のうえ送料込みの合計金額とお振込先を1営業日以内にメールでご案内します。ご入金確認後の発送となります。
+      </div>
+
+      <div class="order-error" id="order-error"></div>
+      <button type="submit" class="btn btn-primary btn-lg" style="margin-top:10px;">注文を確定する</button>
+    </form>
+
+    <div class="summary-card">
+      <h2>ご注文内容</h2>
+      <table class="summary-table">
+        <tbody id="order-items"></tbody>
+      </table>
+      <div class="summary-total">商品合計（税込）<strong id="order-total">¥0</strong></div>
+      <p class="cart-note">送料は別途。ご注文確認メールでご案内します。</p>
+      <a class="link-back" href="cart.html">← カートに戻る</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">ひのき魂</div>
+    <div class="footer-links">
+      <a href="products.html">商品一覧</a>
+      <a href="guide.html">ご利用ガイド</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+    <div class="footer-copy">© 無垢ひのき工場直販 ひのき魂</div>
+  </div>
+</footer>
+
+<script src="https://hayazai.com/data/products.js"></script>
+<script src="js/shop.js"></script>
+<script>
+  const PREFS = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+  const sel = document.getElementById('f-pref');
+  PREFS.forEach(p => { const o = document.createElement('option'); o.value = o.textContent = p; sel.appendChild(o); });
+</script>
+</body>
+</html>
