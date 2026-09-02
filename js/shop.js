@@ -365,6 +365,74 @@ async function submitSample(form) {
   btn.textContent = '無料サンプルを申し込む（送料も無料）';
 }
 
+// ---------- 構造化データ（検索結果に商品・価格・FAQを出す） ----------
+
+function injectJsonLd(obj) {
+  const el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.textContent = JSON.stringify(obj);
+  document.head.appendChild(el);
+}
+
+function injectStructuredData() {
+  const BASE_URL = 'https://h02050d-ship-it.github.io/hinokidamashii/';
+  const page = location.pathname.split('/').pop() || 'index.html';
+
+  if (page === 'index.html') {
+    injectJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'OnlineStore',
+      name: '無垢ひのき工場直販 ひのき魂',
+      alternateName: 'ひのき魂',
+      url: BASE_URL,
+      description: '国産無垢ひのきのフローリング・羽目板を製材工場から直販。当店のモール店より安い公式最安価格。',
+      areaServed: 'JP',
+      address: { '@type': 'PostalAddress', addressRegion: '静岡県', addressLocality: '磐田市', addressCountry: 'JP' },
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.97', bestRating: '5', reviewCount: '600' },
+    });
+  }
+
+  if (document.getElementById('product-list')) {
+    const items = visibleProducts();
+    if (items.length) {
+      injectJsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: items.map((p, i) => ({
+          '@type': 'ListItem', position: i + 1,
+          item: {
+            '@type': 'Product',
+            name: shortName(p),
+            image: p.img,
+            sku: p.id,
+            brand: { '@type': 'Brand', name: 'ひのき魂' },
+            material: '国産桧（ひのき）無垢材',
+            url: BASE_URL + 'products.html#' + p.cat,
+            offers: {
+              '@type': 'Offer', priceCurrency: 'JPY', price: String(shopPrice(p)),
+              availability: 'https://schema.org/InStock', itemCondition: 'https://schema.org/NewCondition',
+              url: BASE_URL + 'products.html#' + p.cat,
+            },
+          },
+        })),
+      });
+    }
+  }
+
+  const faqs = [...document.querySelectorAll('.faq-item')];
+  if (faqs.length) {
+    injectJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.querySelector('.faq-q').textContent.trim(),
+        acceptedAnswer: { '@type': 'Answer', text: f.querySelector('.faq-a').textContent.trim() },
+      })),
+    });
+  }
+}
+
 // ---------- 初期化 ----------
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -374,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartPage();
   renderOrderPage();
   updateStickyCart();
+  injectStructuredData();
 
   const orderForm = document.getElementById('order-form');
   if (orderForm) orderForm.addEventListener('submit', e => { e.preventDefault(); submitOrder(orderForm); });
